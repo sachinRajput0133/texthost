@@ -10,7 +10,12 @@ function App() {
     setVal(val.concat(e.target.value));
   };
   const handelResult = (e) => {
-   
+    try {
+      setVal(eval(val).toString());
+    } catch (err) {
+      setVal("Error");
+    }
+    // console.log(e.target.value)
   };
   const clearHandel = () => {
     setVal("");
